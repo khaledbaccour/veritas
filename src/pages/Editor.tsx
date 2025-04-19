@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { 
@@ -18,7 +17,9 @@ import {
   Tabs,
   Menu,
   Box,
-  Accordion
+  Accordion,
+  ColorSwatch,
+  Popover
 } from '@mantine/core';
 import { useEditor } from '@tiptap/react';
 import StarterKit from '@tiptap/starter-kit';
@@ -27,6 +28,8 @@ import Placeholder from '@tiptap/extension-placeholder';
 import TextAlign from '@tiptap/extension-text-align';
 import Highlight from '@tiptap/extension-highlight';
 import { Link } from '@tiptap/extension-link';
+import TextStyle from '@tiptap/extension-text-style';
+import Color from '@tiptap/extension-color';
 import { RichTextEditor } from '@mantine/tiptap';
 import { 
   ChevronDown,
@@ -38,20 +41,39 @@ import {
   CornerDownLeft,
   GitBranch,
   Settings,
-  History
+  History,
+  Palette
 } from 'lucide-react';
 
 import { articles } from '../data/articlesData';
 
 export default function Editor() {
   const { id } = useParams();
-  const articleId = id || '1'; // Default to the first article if no ID
+  const articleId = id || '1';
   const article = articles.find(a => a.id === articleId) || articles[0];
   
   const [title, setTitle] = useState(article.title);
   const [status, setStatus] = useState(article.status);
+  const [colorPickerOpened, setColorPickerOpened] = useState(false);
   
-  // Setup TipTap editor
+  const textColors = [
+    '#000000',
+    '#FF0000',
+    '#00FF00',
+    '#0000FF',
+    '#FFFF00',
+    '#FF00FF',
+    '#00FFFF',
+    '#800000',
+    '#008000',
+    '#000080',
+    '#808000',
+    '#800080',
+    '#008080',
+    '#808080',
+    '#C0C0C0',
+  ];
+
   const editor = useEditor({
     extensions: [
       StarterKit,
@@ -59,11 +81,18 @@ export default function Editor() {
       TextAlign.configure({ types: ['heading', 'paragraph'] }),
       Placeholder.configure({ placeholder: 'Start writing your article...' }),
       Highlight,
-      Link
+      Link,
+      TextStyle,
+      Color.configure({ types: [TextStyle.name] })
     ],
     content: article.content,
   });
   
+  const setTextColor = (color: string) => {
+    editor?.chain().focus().setColor(color).run();
+    setColorPickerOpened(false);
+  };
+
   return (
     <div className="p-6">
       <Group justify="space-between" mb="md">
@@ -109,7 +138,6 @@ export default function Editor() {
       </Group>
       
       <Grid gutter="lg">
-        {/* Main editor column */}
         <Grid.Col span={{ base: 12, md: 9 }}>
           <Card withBorder mb="md" padding="lg">
             <TextInput
@@ -129,6 +157,42 @@ export default function Editor() {
                   <RichTextEditor.Italic />
                   <RichTextEditor.Underline />
                   <RichTextEditor.Highlight />
+                  
+                  <Popover 
+                    opened={colorPickerOpened} 
+                    onChange={setColorPickerOpened}
+                    position="bottom"
+                    width={240}
+                    withinPortal
+                  >
+                    <Popover.Target>
+                      <Tooltip label="Text Color">
+                        <ActionIcon 
+                          variant="light"
+                          onClick={() => setColorPickerOpened((o) => !o)}
+                          color={editor?.getAttributes('textStyle').color || 'gray'}
+                        >
+                          <Palette size={16} />
+                        </ActionIcon>
+                      </Tooltip>
+                    </Popover.Target>
+                    <Popover.Dropdown>
+                      <Box p="xs">
+                        <Text size="sm" fw={500} mb="xs">Text Color</Text>
+                        <Group gap="xs">
+                          {textColors.map((color) => (
+                            <ColorSwatch
+                              key={color}
+                              color={color}
+                              size={24}
+                              style={{ cursor: 'pointer' }}
+                              onClick={() => setTextColor(color)}
+                            />
+                          ))}
+                        </Group>
+                      </Box>
+                    </Popover.Dropdown>
+                  </Popover>
                 </RichTextEditor.ControlsGroup>
                 
                 <RichTextEditor.ControlsGroup>
@@ -162,7 +226,6 @@ export default function Editor() {
           </Card>
         </Grid.Col>
         
-        {/* Sidebar column */}
         <Grid.Col span={{ base: 12, md: 3 }}>
           <Tabs defaultValue="collaborators">
             <Tabs.List grow>
@@ -298,3 +361,4 @@ export default function Editor() {
     </div>
   );
 }
+
