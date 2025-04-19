@@ -55,11 +55,15 @@ export default function Articles() {
 
               <Card.Section withBorder inheritPadding py="xs">
                 <Group>
-                  <Avatar src={article.author.avatar} size="sm" radius="xl" />
-                  <div style={{ flex: 1 }}>
-                    <Text size="sm">{article.author.name}</Text>
-                    <Text size="xs" c="dimmed">{article.author.role}</Text>
-                  </div>
+                  {article.collaborators.length > 0 && (
+                    <>
+                      <Avatar src={article.collaborators[0].avatar} size="sm" radius="xl" />
+                      <div style={{ flex: 1 }}>
+                        <Text size="sm">{article.collaborators[0].name}</Text>
+                        <Text size="xs" c="dimmed">{article.collaborators[0].role}</Text>
+                      </div>
+                    </>
+                  )}
                   <Button 
                     variant="light"
                     component={Link}
