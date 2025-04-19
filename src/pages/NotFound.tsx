@@ -1,27 +1,54 @@
-import { useLocation } from "react-router-dom";
-import { useEffect } from "react";
 
-const NotFound = () => {
-  const location = useLocation();
+import { 
+  Title, 
+  Text, 
+  Button, 
+  Group, 
+  Container,
+  Image,
+  Box
+} from '@mantine/core';
+import { FileSearch, Home, ArrowLeft } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
-  useEffect(() => {
-    console.error(
-      "404 Error: User attempted to access non-existent route:",
-      location.pathname
-    );
-  }, [location.pathname]);
-
+export default function NotFound() {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">404</h1>
-        <p className="text-xl text-gray-600 mb-4">Oops! Page not found</p>
-        <a href="/" className="text-blue-500 hover:text-blue-700 underline">
-          Return to Home
-        </a>
-      </div>
-    </div>
+    <Container size="md" style={{ 
+      display: 'flex', 
+      flexDirection: 'column',
+      alignItems: 'center',
+      justifyContent: 'center',
+      minHeight: 'calc(100vh - 200px)',
+      textAlign: 'center',
+      padding: '2rem'
+    }}>
+      <FileSearch size={80} strokeWidth={1.5} style={{ marginBottom: '2rem', opacity: 0.6 }} />
+      
+      <Title order={1} size="2.5rem" mb="md">404 - Page Not Found</Title>
+      
+      <Text c="dimmed" size="lg" mb="xl" maw={500}>
+        Sorry, we couldn't find the page you're looking for. It might have been moved, deleted,
+        or perhaps never existed in the first place.
+      </Text>
+      
+      <Group>
+        <Button 
+          component={Link} 
+          to="/"
+          leftSection={<Home size={18} />}
+          size="lg"
+        >
+          Back to Dashboard
+        </Button>
+        <Button 
+          variant="outline"
+          leftSection={<ArrowLeft size={18} />}
+          size="lg"
+          onClick={() => window.history.back()}
+        >
+          Go Back
+        </Button>
+      </Group>
+    </Container>
   );
-};
-
-export default NotFound;
+}
