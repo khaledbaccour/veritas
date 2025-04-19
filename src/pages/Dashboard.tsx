@@ -224,11 +224,11 @@ export default function Dashboard() {
             {recentArticles.map((article) => (
               <Card key={article.id} withBorder mb="sm" padding="sm">
                 <Text fw={500} lineClamp={1}>{article.title}</Text>
-                <Group position="apart" mt="xs">
+                <Group justify="space-between" mt="xs">
                   <Badge size="sm" variant={article.status === 'published' ? 'filled' : 'light'}>
                     {article.status}
                   </Badge>
-                  <Group spacing="xs">
+                  <Group gap="xs">
                     <Clock size={14} />
                     <Text size="xs">{new Date(article.updatedAt).toLocaleDateString()}</Text>
                   </Group>
@@ -246,7 +246,7 @@ export default function Dashboard() {
             </Group>
             
             <Box mb="xs">
-              <Group position="apart">
+              <Group justify="space-between">
                 <Text fw={500}>Climate Policy Analysis</Text>
                 <Badge color="red">Tomorrow</Badge>
               </Group>
@@ -254,7 +254,7 @@ export default function Dashboard() {
             </Box>
             
             <Box mb="xs">
-              <Group position="apart">
+              <Group justify="space-between">
                 <Text fw={500}>Interview: Senator Richards</Text>
                 <Badge color="orange">3 days</Badge>
               </Group>
@@ -262,7 +262,7 @@ export default function Dashboard() {
             </Box>
             
             <Box mb="xs">
-              <Group position="apart">
+              <Group justify="space-between">
                 <Text fw={500}>Urban Housing Series</Text>
                 <Badge color="blue">1 week</Badge>
               </Group>

@@ -136,32 +136,32 @@ export default function Editor() {
             <RichTextEditor editor={editor}>
               <RichTextEditor.Toolbar sticky>
                 <RichTextEditor.ControlsGroup>
-                  <RichTextEditor.Bold icon={<Bold size={16} />} />
-                  <RichTextEditor.Italic icon={<Italic size={16} />} />
-                  <RichTextEditor.Underline icon={<UnderlineIcon size={16} />} />
+                  <RichTextEditor.Bold />
+                  <RichTextEditor.Italic />
+                  <RichTextEditor.Underline />
                   <RichTextEditor.Highlight />
                 </RichTextEditor.ControlsGroup>
                 
                 <RichTextEditor.ControlsGroup>
-                  <RichTextEditor.H1 icon={<Heading1 size={16} />} />
-                  <RichTextEditor.H2 icon={<Heading2 size={16} />} />
+                  <RichTextEditor.H1 />
+                  <RichTextEditor.H2 />
                   <RichTextEditor.H3 />
                   <RichTextEditor.H4 />
                 </RichTextEditor.ControlsGroup>
                 
                 <RichTextEditor.ControlsGroup>
-                  <RichTextEditor.BulletList icon={<List size={16} />} />
-                  <RichTextEditor.OrderedList icon={<ListOrdered size={16} />} />
+                  <RichTextEditor.BulletList />
+                  <RichTextEditor.OrderedList />
                 </RichTextEditor.ControlsGroup>
                 
                 <RichTextEditor.ControlsGroup>
-                  <RichTextEditor.AlignLeft icon={<AlignLeft size={16} />} />
-                  <RichTextEditor.AlignCenter icon={<AlignCenter size={16} />} />
-                  <RichTextEditor.AlignRight icon={<AlignRight size={16} />} />
+                  <RichTextEditor.AlignLeft />
+                  <RichTextEditor.AlignCenter />
+                  <RichTextEditor.AlignRight />
                 </RichTextEditor.ControlsGroup>
                 
                 <RichTextEditor.ControlsGroup>
-                  <RichTextEditor.Link icon={<LinkIcon size={16} />} />
+                  <RichTextEditor.Link />
                   <RichTextEditor.Unlink />
                 </RichTextEditor.ControlsGroup>
               </RichTextEditor.Toolbar>
@@ -212,7 +212,7 @@ export default function Editor() {
             </Tabs.Panel>
             
             <Tabs.Panel value="comments" pt="md">
-              <Group position="apart" mb="md">
+              <Group justify="space-between" mb="md">
                 <Text fw={500}>Comments ({article.comments.length})</Text>
                 <Badge>{article.comments.filter(c => !c.resolved).length} Open</Badge>
               </Group>
@@ -236,8 +236,8 @@ export default function Editor() {
                   
                   {!comment.resolved && (
                     <Group mt="xs">
-                      <Button variant="subtle" size="xs" compact>Reply</Button>
-                      <Button variant="outline" size="xs" compact>Resolve</Button>
+                      <Button variant="subtle" size="xs">Reply</Button>
+                      <Button variant="outline" size="xs">Resolve</Button>
                     </Group>
                   )}
                 </Card>
@@ -255,7 +255,7 @@ export default function Editor() {
             </Tabs.Panel>
             
             <Tabs.Panel value="versions" pt="md">
-              <Group position="apart" mb="md">
+              <Group justify="space-between" mb="md">
                 <Text fw={500}>Version History</Text>
                 <Badge>{article.versions.length} Versions</Badge>
               </Group>

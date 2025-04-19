@@ -210,7 +210,7 @@ export default function Messages() {
           <Card withBorder padding={0} h="calc(100vh - 200px)" style={{ display: 'flex', flexDirection: 'column' }}>
             {/* Chat header */}
             <Box p="md" style={{ borderBottom: '1px solid var(--border)' }}>
-              <Group position="apart">
+              <Group justify="space-between">
                 <Group>
                   {activeChatType === 'user' ? (
                     <>
@@ -365,7 +365,7 @@ export default function Messages() {
                                     <Text size="sm">{attachment.fileName}</Text>
                                     <Text size="xs" c="dimmed">{attachment.fileSize}</Text>
                                   </div>
-                                  <Button variant="subtle" compact size="xs">
+                                  <Button variant="subtle" size="xs">
                                     Download
                                   </Button>
                                 </div>

@@ -1,3 +1,4 @@
+
 import { 
   Title, 
   Text, 
@@ -82,7 +83,7 @@ export default function VersionControl() {
         </Text>
         
         <Card withBorder padding="lg" mb="lg">
-          <Group position="apart" mb="md">
+          <Group justify="space-between" mb="md">
             <Title order={4}>Version History</Title>
             <Badge>{article.versions.length} Versions</Badge>
           </Group>
