@@ -14,6 +14,7 @@ import VersionControl from './pages/VersionControl';
 import Articles from './pages/Articles';
 import Whiteboards from './pages/Whiteboards';
 import Whiteboard from './pages/Whiteboard';
+import Whistleblower from './pages/Whistleblower';
 
 function App() {
   const [collapsed, setCollapsed] = useState(false);
@@ -45,6 +46,7 @@ function App() {
           <Route path="/articles" element={<Articles />} />
           <Route path="/whiteboards" element={<Whiteboards />} />
           <Route path="/whiteboard/:id?" element={<Whiteboard />} />
+          <Route path="/whistleblower" element={<Whistleblower />} />
         </Routes>
         <Toaster />
       </AppShell.Main>

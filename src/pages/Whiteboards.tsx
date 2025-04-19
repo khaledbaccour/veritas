@@ -8,9 +8,7 @@ import {
   Group, 
   Button, 
   TextInput,
-  Badge, 
   Avatar,
-  Container,
   ActionIcon,
   Menu,
   Modal
@@ -25,9 +23,7 @@ import {
   Share2, 
   Copy, 
   Trash, 
-  FolderOpen,
   Clock,
-  Users
 } from 'lucide-react';
 
 const whiteboards = [
@@ -203,7 +199,6 @@ export default function Whiteboards() {
         <Group justify="flex-end">
           <Button variant="default" onClick={close}>Cancel</Button>
           <Button onClick={() => {
-            // In a real app, we'd create the whiteboard via an API
             console.log(`Creating new whiteboard: ${newBoardTitle}`);
             close();
             setNewBoardTitle('');
