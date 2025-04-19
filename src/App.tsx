@@ -2,6 +2,8 @@
 import { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { AppShell } from '@mantine/core';
+import { Toaster } from './components/ui/toaster';
+
 import Header from './components/layout/Header';
 import Sidebar from './components/layout/Sidebar';
 import Dashboard from './pages/Dashboard';
@@ -11,7 +13,8 @@ import Messages from './pages/Messages';
 import NotificationsPage from './pages/NotificationsPage';
 import VersionControl from './pages/VersionControl';
 import Articles from './pages/Articles';
-import NotFound from './pages/NotFound';
+import Whiteboards from './pages/Whiteboards';
+import Whiteboard from './pages/Whiteboard';
 
 function App() {
   const [collapsed, setCollapsed] = useState(false);
@@ -41,8 +44,10 @@ function App() {
           <Route path="/notifications" element={<NotificationsPage />} />
           <Route path="/version-control" element={<VersionControl />} />
           <Route path="/articles" element={<Articles />} />
-          <Route path="*" element={<NotFound />} />
+          <Route path="/whiteboards" element={<Whiteboards />} />
+          <Route path="/whiteboard/:id?" element={<Whiteboard />} />
         </Routes>
+        <Toaster />
       </AppShell.Main>
     </AppShell>
   );
