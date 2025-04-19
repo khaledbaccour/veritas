@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { 
   Group, 
@@ -69,7 +68,7 @@ export default function Header({ collapsed, setCollapsed }: HeaderProps) {
             <Button variant="subtle" px={10} onClick={() => setNotificationOpen(!notificationOpen)}>
               <Bell size={20} />
               {unreadCount > 0 && (
-                <Badge color="accent" size="sm" variant="filled" style={{ position: 'absolute', top: 5, right: 5 }}>
+                <Badge color="red" size="sm" variant="filled" style={{ position: 'absolute', top: 5, right: 5 }}>
                   {unreadCount}
                 </Badge>
               )}

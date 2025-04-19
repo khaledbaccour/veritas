@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { 
   Title, 
@@ -124,7 +123,7 @@ export default function NotificationsPage() {
               value="all" 
               leftSection={<Bell size={16} />}
               rightSection={
-                <Badge size="xs" variant="filled" circle>
+                <Badge size="xs" variant="filled" color="red" circle>
                   {notifications.length}
                 </Badge>
               }
@@ -135,7 +134,7 @@ export default function NotificationsPage() {
               value="unread" 
               leftSection={<BellOff size={16} />}
               rightSection={
-                <Badge size="xs" variant="filled" circle>
+                <Badge size="xs" variant="filled" color="red" circle>
                   {notifications.filter(n => !n.read).length}
                 </Badge>
               }
