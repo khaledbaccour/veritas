@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { 
@@ -28,29 +27,6 @@ import TextAlign from '@tiptap/extension-text-align';
 import Highlight from '@tiptap/extension-highlight';
 import { Link } from '@tiptap/extension-link';
 import { RichTextEditor } from '@mantine/tiptap';
-import { 
-  Bold, 
-  Italic, 
-  Underline as UnderlineIcon, 
-  AlignLeft, 
-  AlignCenter, 
-  AlignRight, 
-  List, 
-  ListOrdered, 
-  Heading1, 
-  Heading2, 
-  Link as LinkIcon,
-  CornerDownLeft,
-  MessageSquare,
-  Save,
-  GitBranch,
-  Share2,
-  Settings,
-  ChevronDown,
-  UserPlus,
-  History,
-  Eye
-} from 'lucide-react';
 
 import { articles } from '../data/articlesData';
 
