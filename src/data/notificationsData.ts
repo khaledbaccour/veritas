@@ -11,8 +11,8 @@ export interface Notification {
 export const notifications: Notification[] = [
   {
     id: '1',
-    title: 'New comment on your article',
-    message: 'Sarah Johnson commented on "The Impact of Climate Change"',
+    title: 'New edit suggestion received',
+    message: 'Sarah Johnson suggested edits to "The Impact of Climate Change"',
     time: '10 minutes ago',
     read: false,
     type: 'editor'
