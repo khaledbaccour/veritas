@@ -1,4 +1,3 @@
-
 import { NavLink } from '@mantine/core';
 import { useLocation, Link } from 'react-router-dom';
 import { 
@@ -8,7 +7,8 @@ import {
   MessageSquare, 
   Bell, 
   GitBranch, 
-  Layers
+  Layers,
+  PenTool
 } from 'lucide-react';
 
 interface SidebarProps {
@@ -26,6 +26,7 @@ export default function Sidebar({ collapsed }: SidebarProps) {
     { icon: <Bell size={20} />, label: 'Notifications', to: '/notifications' },
     { icon: <GitBranch size={20} />, label: 'Version Control', to: '/version-control' },
     { icon: <Layers size={20} />, label: 'My Articles', to: '/articles' },
+    { icon: <PenTool size={20} />, label: 'Whiteboards', to: '/whiteboards' },
   ];
 
   return (
