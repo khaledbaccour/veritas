@@ -40,6 +40,7 @@ function App() {
           <Route path="/messages" element={<Messages />} />
           <Route path="/notifications" element={<NotificationsPage />} />
           <Route path="/version-control" element={<VersionControl />} />
+          <Route path="/articles" element={<Articles />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </AppShell.Main>
