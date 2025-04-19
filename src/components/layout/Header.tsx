@@ -6,7 +6,7 @@ import {
   Title, 
   TextInput, 
   Badge, 
-  Menu, 
+  Menu as MantineMenu, 
   Avatar, 
   Button,
   Popover,
@@ -15,12 +15,12 @@ import {
 } from '@mantine/core';
 import { 
   Search, 
-  Menu, 
   Bell, 
   Mail, 
   User, 
   Settings,
-  LogOut
+  LogOut,
+  Menu as MenuIcon
 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { notifications } from '../../data/notificationsData';
@@ -43,7 +43,7 @@ export default function Header({ collapsed, setCollapsed }: HeaderProps) {
           onClick={() => setCollapsed(!collapsed)}
           size="lg"
         >
-          <Menu size={20} />
+          <MenuIcon size={20} />
         </ActionIcon>
         <Title order={3} fw={600} c="primary" size="h4">
           Veritas
@@ -99,22 +99,22 @@ export default function Header({ collapsed, setCollapsed }: HeaderProps) {
           <Mail size={20} />
         </ActionIcon>
 
-        <Menu position="bottom-end" shadow="md">
-          <Menu.Target>
+        <MantineMenu position="bottom-end" shadow="md">
+          <MantineMenu.Target>
             <Avatar 
               src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61" 
               radius="xl" 
               size="sm"
               style={{ cursor: 'pointer' }}
             />
-          </Menu.Target>
-          <Menu.Dropdown>
-            <Menu.Item leftSection={<User size={14} />}>Profile</Menu.Item>
-            <Menu.Item leftSection={<Settings size={14} />}>Settings</Menu.Item>
-            <Menu.Divider />
-            <Menu.Item leftSection={<LogOut size={14} />} color="red">Logout</Menu.Item>
-          </Menu.Dropdown>
-        </Menu>
+          </MantineMenu.Target>
+          <MantineMenu.Dropdown>
+            <MantineMenu.Item leftSection={<User size={14} />}>Profile</MantineMenu.Item>
+            <MantineMenu.Item leftSection={<Settings size={14} />}>Settings</MantineMenu.Item>
+            <MantineMenu.Divider />
+            <MantineMenu.Item leftSection={<LogOut size={14} />} color="red">Logout</MantineMenu.Item>
+          </MantineMenu.Dropdown>
+        </MantineMenu>
       </Group>
     </Group>
   );
