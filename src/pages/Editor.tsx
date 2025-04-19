@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { 
@@ -27,6 +28,18 @@ import TextAlign from '@tiptap/extension-text-align';
 import Highlight from '@tiptap/extension-highlight';
 import { Link } from '@tiptap/extension-link';
 import { RichTextEditor } from '@mantine/tiptap';
+import { 
+  ChevronDown,
+  UserPlus,
+  Eye,
+  Share2,
+  Save,
+  MessageSquare,
+  CornerDownLeft,
+  GitBranch,
+  Settings,
+  History
+} from 'lucide-react';
 
 import { articles } from '../data/articlesData';
 
