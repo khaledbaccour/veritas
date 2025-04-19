@@ -10,6 +10,7 @@ import Editor from './pages/Editor';
 import Messages from './pages/Messages';
 import NotificationsPage from './pages/NotificationsPage';
 import VersionControl from './pages/VersionControl';
+import Articles from './pages/Articles';
 import NotFound from './pages/NotFound';
 
 function App() {
