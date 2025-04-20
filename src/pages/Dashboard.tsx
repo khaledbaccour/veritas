@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { 
   Title, 
@@ -17,11 +16,8 @@ import {
 import { 
   TrendingUp, 
   Lightbulb, 
-  BarChart3, 
   FileText, 
   Clock, 
-  ArrowUpRight, 
-  ArrowDownRight,
   CheckCircle2,
   Timer
 } from 'lucide-react';
@@ -53,9 +49,6 @@ export default function Dashboard() {
               </Tabs.Tab>
               <Tabs.Tab value="ideas" leftSection={<Lightbulb size={16} />}>
                 Story Ideas
-              </Tabs.Tab>
-              <Tabs.Tab value="analytics" leftSection={<BarChart3 size={16} />}>
-                Your Analytics
               </Tabs.Tab>
             </Tabs.List>
 
@@ -155,60 +148,6 @@ export default function Dashboard() {
                   </Card>
                 ))}
               </SimpleGrid>
-            </Tabs.Panel>
-
-            <Tabs.Panel value="analytics" pt="md">
-              <SimpleGrid cols={{ base: 1, sm: 3 }} spacing="lg" mb="xl">
-                <Card withBorder padding="md">
-                  <Group>
-                    <ArrowUpRight size={20} color="green" />
-                    <div>
-                      <Text size="xs" c="dimmed">Article Views</Text>
-                      <Text fw={700} size="xl">4,256</Text>
-                    </div>
-                  </Group>
-                  <Text size="xs" c="green" fw={500} mt="xs">+12.5% from last week</Text>
-                </Card>
-                
-                <Card withBorder padding="md">
-                  <Group>
-                    <ArrowDownRight size={20} color="red" />
-                    <div>
-                      <Text size="xs" c="dimmed">Average Time on Page</Text>
-                      <Text fw={700} size="xl">3:42</Text>
-                    </div>
-                  </Group>
-                  <Text size="xs" c="red" fw={500} mt="xs">-0:15 from last week</Text>
-                </Card>
-                
-                <Card withBorder padding="md">
-                  <Group>
-                    <ArrowUpRight size={20} color="green" />
-                    <div>
-                      <Text size="xs" c="dimmed">Social Shares</Text>
-                      <Text fw={700} size="xl">128</Text>
-                    </div>
-                  </Group>
-                  <Text size="xs" c="green" fw={500} mt="xs">+23.8% from last week</Text>
-                </Card>
-              </SimpleGrid>
-              
-              <Card withBorder padding="lg" mb="lg">
-                <Title order={4} mb="md">Top Performing Articles</Title>
-                <List spacing="lg">
-                  {articles.slice(0, 3).map((article, idx) => (
-                    <List.Item key={article.id}>
-                      <Group justify="space-between">
-                        <div>
-                          <Text fw={500}>{article.title}</Text>
-                          <Text size="xs" c="dimmed">Published on {new Date(article.updatedAt).toLocaleDateString()}</Text>
-                        </div>
-                        <Badge variant="light">{1400 - (idx * 350)} views</Badge>
-                      </Group>
-                    </List.Item>
-                  ))}
-                </List>
-              </Card>
             </Tabs.Panel>
           </Tabs>
         </Grid.Col>
