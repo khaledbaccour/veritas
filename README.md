@@ -2,7 +2,8 @@
 [![React](https://img.shields.io/badge/React-17.0.2-blue?logo=react)](https://reactjs.org) [![Vite](https://img.shields.io/badge/Vite-4.0.0-brightgreen?logo=vite)](https://vitejs.dev) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 # 📚 Documentation Technique de Veritas
-[https://veritas-7emokrluy-kbaccerrabs-projects.vercel.app]
+[veritas-platform.vercel.app
+]
 > **✨ À Propos**
 > **Veritas** est une plateforme de journalisme collaboratif et de gestion de contenu, fournissant un espace centralisé pour :
 > - **Recherche**
@@ -12,7 +13,7 @@
 >
 > *Note : données actuellement mockées pour démonstration.*
 >
-> **🔐 Dénonciation anonyme & sécurisée** : utilisez [https://veritas-7emokrluy-kbaccerrabs-projects.vercel.app/whistleblower] pour soumettre des informations de manière confidentielle ; celles-ci seront acheminées à la catégorie de journalistes appropriée pour traitement.*
+> **🔐 Dénonciation anonyme & sécurisée** : utilisez [veritas-platform.vercel.app] pour soumettre des informations de manière confidentielle ; celles-ci seront acheminées à la catégorie de journalistes appropriée pour traitement.*
 
 ---
 
