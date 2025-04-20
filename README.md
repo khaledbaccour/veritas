@@ -2,8 +2,8 @@
 [![React](https://img.shields.io/badge/React-17.0.2-blue?logo=react)](https://reactjs.org) [![Vite](https://img.shields.io/badge/Vite-4.0.0-brightgreen?logo=vite)](https://vitejs.dev) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 # 📚 Documentation Technique de Veritas
-[veritas-platform.vercel.app
-]
+https://veritas-platform.vercel.app
+
 > **✨ À Propos**
 > **Veritas** est une plateforme de journalisme collaboratif et de gestion de contenu, fournissant un espace centralisé pour :
 > - **Recherche**
@@ -13,7 +13,7 @@
 >
 > *Note : données actuellement mockées pour démonstration.*
 >
-> **🔐 Dénonciation anonyme & sécurisée** : utilisez [veritas-platform.vercel.app] pour soumettre des informations de manière confidentielle ; celles-ci seront acheminées à la catégorie de journalistes appropriée pour traitement.*
+> **🔐 Dénonciation anonyme & sécurisée** : utilisez veritas-platform.vercel.app pour soumettre des informations de manière confidentielle ; celles-ci seront acheminées à la catégorie de journalistes appropriée pour traitement.*
 
 ---
 
@@ -73,7 +73,7 @@ components/
    - 💬 Messagerie chiffrée
    - 🗳️ Soumissions anonymes (lanceurs d’alerte)
    - 🔔 Notifications et rappels
-   - 🌐 [Dénonciation anonyme & sécurisée](https://veritashack.netlify.app/whistlerblower) (info acheminée à la catégorie de journalistes concernée)
+   - 🌐 [Dénonciation anonyme & sécurisée](veritas-platform.vercel.app/whistleblower) (info acheminée à la catégorie de journalistes concernée)
 
 4. **Collaboration Visuelle**
    - 🖼️ Tableaux blancs interactifs (`tldraw`)
