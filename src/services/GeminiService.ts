@@ -22,7 +22,7 @@ export class GeminiService {
         role: 'user',
         parts: [
           {
-            text: prompt,
+            text: `Only return plain text, no HTML.\n${prompt}`,
           },
         ],
       },
