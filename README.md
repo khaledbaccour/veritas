@@ -2,7 +2,13 @@
 [![React](https://img.shields.io/badge/React-17.0.2-blue?logo=react)](https://reactjs.org) [![Vite](https://img.shields.io/badge/Vite-4.0.0-brightgreen?logo=vite)](https://vitejs.dev) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 # 📚 Documentation Technique de Veritas
-https://veritas-platform.vercel.app
+<p align="center">
+  <img src="https://veritas-platform.vercel.app/assets/logo-CwHMZLc0.png" alt="Veritas Logo" width="200" style="background-color: white; padding: 10px; border-radius: 10px;" />
+</p>
+
+<p align="center">
+  <strong>Welcome to <a href="https://veritas-platform.vercel.app">veritas Platform</a></strong>
+</p>
 
 > **✨ À Propos**
 > **Veritas** est une plateforme de journalisme collaboratif et de gestion de contenu, fournissant un espace centralisé pour :
@@ -120,7 +126,3 @@ npm run dev
 ```bash
 npm run build
 ```
-
----
-
-> 💡 **Astuce** : ajoutez un **thème sombre** ou une **barre latérale** pour améliorer la navigation !
